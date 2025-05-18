@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,97 +6,129 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 25% 27%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 25% 27%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 25% 27%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 353 84% 56%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 215 25% 27%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 215 5% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 215 25% 27%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 215 25% 27%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* CSS Cherry Blossom */
+  .cherry-blossom {
+    @apply relative inline-block w-5 h-5 bg-forlivium-red rounded-full before:absolute before:content-[""] before:w-5 before:h-5 before:bg-forlivium-red before:rounded-full before:left-2 before:top-0 after:absolute after:content-[""] after:w-5 after:h-5 after:bg-forlivium-red after:rounded-full after:left-1 after:top-2;
+  }
+
+  /* CSS Wave Pattern */
+  .wave-pattern {
+    @apply h-16 w-full bg-repeat-x bg-[length:50px_16px] relative overflow-hidden;
+    background-image: radial-gradient(circle at 25px -8px, transparent 18px, currentColor 19px);
+  }
+
+  /* CSS Mount Fuji */
+  .mount-fuji {
+    @apply relative h-44 w-56 mx-auto overflow-hidden;
+  }
+  
+  .mount-fuji::before {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-32 bg-forlivium-black;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+  }
+  
+  .mount-fuji::after {
+    content: '';
+    @apply absolute bottom-8 left-8 right-8 h-20 bg-white;
+    clip-path: polygon(0% 100%, 50% 30%, 100% 100%);
+  }
+
+  /* CSS Coin */
+  .web3-coin {
+    @apply relative w-20 h-20 rounded-full bg-forlivium-red border-4 border-forlivium-white flex items-center justify-center text-forlivium-white font-bold text-xl shadow-lg;
+    transform-style: preserve-3d;
+  }
+  
+  .web3-coin::before {
+    content: '㋛';
+    @apply absolute;
+  }
+
+  /* CSS Torii Gate */
+  .torii-gate {
+    @apply relative w-32 h-32 mx-auto;
+  }
+  
+  .torii-gate::before, .torii-gate::after {
+    content: '';
+    @apply absolute h-24 w-4 bg-forlivium-red bottom-0;
+  }
+  
+  .torii-gate::before {
+    @apply left-4;
+  }
+  
+  .torii-gate::after {
+    @apply right-4;
+  }
+  
+  .torii-gate .top {
+    @apply absolute top-3 left-0 right-0 h-4 bg-forlivium-red;
+  }
+  
+  .torii-gate .middle {
+    @apply absolute top-8 w-full h-4 bg-forlivium-red;
+  }
+}
+
+/* Animation classes */
+@layer utilities {
+  .fadeIn {
+    @apply animate-fade-in;
+  }
+  
+  .float {
+    @apply animate-float;
+  }
+  
+  .wave {
+    @apply animate-wave;
+  }
+  
+  .spin-slow {
+    @apply animate-spin-slow;
   }
 }
